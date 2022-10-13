@@ -24,4 +24,7 @@ variable "source_repo_branch" {
 }
 
 
-
+variable "ip" {
+  type        = string
+  default = "10.128.0.4"
+}

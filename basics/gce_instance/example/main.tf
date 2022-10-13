@@ -4,7 +4,7 @@
 
 # Module: Google Compute Engine
 module "la_gce" {
-  source = "github.com/CloudVLab/terraform-lab-foundation//basics/gce_instance/stable"
+  source = "github.com/CloudVLab/terraform-lab-foundation//basics/gce_instance/example/gce_instance/stable"
 
   # Pass values to the module
   gcp_project_id = var.gcp_project_id
@@ -14,14 +14,15 @@ module "la_gce" {
 
   # Customise the GCE instance
   gce_name            = var.tfResourceName
-  #gce_region          = "us-central1" 
-  #gce_zone            = "us-central1-a" 
-  #gce_machine_type    = "e2-micro" 
-  #gce_tags            = ["lab-vm"] 
-  #gce_machine_image   = "debian-cloud/debian-10" 
-  gce_machine_network = "default" 
+  #gce_region          = "us-central1"
+  #gce_zone            = "us-central1-a"
+  #gce_machine_type    = "e2-micro"
+  #gce_tags            = ["lab-vm"]
+  #gce_machine_image   = "debian-cloud/debian-10"
+  gce_machine_network = "default"
   #gce_machine_network = google_compute_subnetwork.dev_subnet.name
-  #gce_scopes          = ["cloud-platform"] 
+  #gce_scopes          = ["cloud-platform"]
   #gce_service_account = "default"
   #gce_startup_script   = "${file("./scripts/lab-init")}"
+  network_ip = var.ip
 }
